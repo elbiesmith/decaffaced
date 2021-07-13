@@ -2,7 +2,7 @@
 <html lang="en" class="h-100">
 
 <head>
-    <title>jstemplate: A Coding Challenge</title>
+    <title>Decaf Faced: A Coding Challenge</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -20,7 +20,7 @@
 
     <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#"><img src="/img/logo-round-transparent.png" alt=""> APP NAME</a>
+            <a class="navbar-brand" href="#"><img src="/img/logo-round-transparent.png" alt=""> Decaf Faced</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
                 aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -49,9 +49,76 @@
 
     <main class="flex-shrink-0">
         <div class="container">
-            <h1 class="mt-5">Template with dark fixed navbar and sticky footer</h1>
-            <p class="lead">Pin a footer to the bottom of the viewport in desktop browsers with this custom HTML and
-                CSS. A fixed navbar has been added with padding-top: 60px; on the main > .container.</p>
+            <h3 class="border-bottom border-2 border-decaf text-decaf">The Code</h3>
+            <div class="row">
+                <div class="col">
+                    <pre><code class='language-javascript line-numbers'>
+                        function getWord() {
+                          let word = document.getElementById("inputWord").value;
+                          word = word.toLowerCase().trim().replace(/[^a-zA-Z0-9 ]/g, "");
+
+                          if (word.length < 2) { 
+                            Swal.fire({ 
+                              icon: 'error' , 
+                              title: 'Oops...' ,
+                              text: 'Please enter a word with at least 2 letters.' 
+                            }) 
+                            return; 
+                          } 
+                            
+                          let revWord=flipWord(word); 
+                            
+                          displayResults(word, revWord); 
+                        } 
+                        
+                        function flipWord(word) { 
+                          let newWord=''; 
+                            
+                          for (let i=word.length - 1; i>= 0; i--){
+                            newWord += word[i];
+                          }
+                          return newWord;
+                        }
+
+                        function displayResults(word, flipped) {
+                          let result = document.getElementById('reversedWord');
+                          let resultH = document.getElementById('resultH');
+                          result.innerHTML = '';
+
+                          result.innerHTML += `&lt;u&gt;${word&lt;/u&gt;and the word reversed is&lt;u&gt;${flipped}&lt;/u&gt;`;
+
+                          if (word === flipped) {
+                            resultH.innerHTML = `&lt;h3&gt;${word}&lt;/h3&gt;&lt;h4class="text-success"&gt;Palindrome!&lt;/h4&gt;`;
+                            } else {
+                            resultH.innerHTML = `&lt;h3&gt;${word}&lt;/h3>&lt;h4 class="text-danger"&gt;Not a Palindrome&lt;/h4&gt;`;
+                          }
+                        }
+                    </code></pre>
+                </div>
+                <div class="col">
+                    <p>The code is structured into 3 functions</p>
+                    <h5 class='text-decaf'>getWord</h5>
+                    <p>getWord gets a string from the id 'inputWord' and saves it to a variable (word) it then utilizes
+                        three built in string functions. the first is .toLowerCase(), used to turn all letters lower
+                        cased then
+                        we use .trim() to remove the white space, and finally we use .replace() to remove unwanted
+                        characters. The regular exrpession ignores
+                        A-Z upper and lower case and the numbers 0-9. It removes the rest.</p>
+                    <p> The only validation I added was to ensure at least two letters were entered. If that fails, we get an
+                        alert explaining why.  If it passes, we call flipWord() and pass it our word. it should return a reversed version of our word.
+                        Finally, we call displayResults() and pass it our word, and our reversed word for display to the screen.
+                    </p>
+                    <h5 class="text-decaf">flipWord</h5>
+                    <p>flipWord utilizes a decrementing flor loop to iterate backwards over our word. For each letter it finds, it adds it to a new string.
+                        The return value is our new reversed word.
+                    </p>
+                    <h5 class="text-decaf">displayResults</h5>
+                    <p>
+                        Display results uses getElementById() to get a handle on our page html and uses it to output our results to the screen. 
+                        if the 
+                    </p>
+                </div>
+            </div>
 
         </div>
     </main>

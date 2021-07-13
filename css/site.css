@@ -38,10 +38,26 @@
        min-height: 160px;
    }
 
-   .txt-grn {
-       color: #68807A;
+   .text-decaf {
+       color: #e3815a;
    }
 
    .table-text-size {
        font-size: 12px;
+   }
+.btn-decaf {
+    background-color: #ffc9b3;
+    color: black;
+    border-color: #e3815a
+}
+   .btn-hover:hover {
+       background-color: #e3815a;
+   }
+
+   body {
+       background-color: #ffc9b3;
+   }
+
+   .border-decaf {
+       border-color: #e3815a !important;
    }
