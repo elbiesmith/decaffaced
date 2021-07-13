@@ -55,7 +55,7 @@
                     <pre><code class='language-javascript line-numbers'>
                         function getWord() {
                           let word = document.getElementById("inputWord").value;
-                          word = word.toLowerCase().trim().replace(/[^a-zA-Z0-9 ]/g, "");
+                          word = word.toLowerCase().trim().replace(/[^a-zA-Z0-9]/g, "");
 
                           if (word.length < 2) { 
                             Swal.fire({ 
@@ -104,18 +104,23 @@
                         we use .trim() to remove the white space, and finally we use .replace() to remove unwanted
                         characters. The regular exrpession ignores
                         A-Z upper and lower case and the numbers 0-9. It removes the rest.</p>
-                    <p> The only validation I added was to ensure at least two letters were entered. If that fails, we get an
-                        alert explaining why.  If it passes, we call flipWord() and pass it our word. it should return a reversed version of our word.
-                        Finally, we call displayResults() and pass it our word, and our reversed word for display to the screen.
+                    <p> The only validation I added was to ensure at least two letters were entered. If that fails, we
+                        get an
+                        alert explaining why. If it passes, we call flipWord() and pass it our word. it should return a
+                        reversed version of our word.
+                        Finally, we call displayResults() and pass it our word, and our reversed word for display to the
+                        screen.
                     </p>
                     <h5 class="text-decaf">flipWord</h5>
-                    <p>flipWord utilizes a decrementing flor loop to iterate backwards over our word. For each letter it finds, it adds it to a new string.
+                    <p>flipWord utilizes a decrementing flor loop to iterate backwards over our word. For each letter it
+                        finds, it adds it to a new string.
                         The return value is our new reversed word.
                     </p>
                     <h5 class="text-decaf">displayResults</h5>
                     <p>
-                        Display results uses getElementById() to get a handle on our page html and uses it to output our results to the screen. 
-                        if the 
+                        Display results uses getElementById() to get a handle on our page html and uses it to output our
+                        results to the screen.
+                        if the
                     </p>
                 </div>
             </div>
