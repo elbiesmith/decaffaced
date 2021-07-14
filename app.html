@@ -54,20 +54,33 @@
                         <h5 class="text-decaf border-bottom border-2 border-decaf">Decaf Faced: Reverse-A-String</h5>
                         <p>Lets put a new spin on the old reverse a string. Take an input word and reverse it. Write to
                             the page whether or not it is a palindrome.</p>
+                            <p>A Palindrome is a word, phrase, or sequence that reads the same backward as forward.
+                                Write a program the checks if the phrase entered is a palindrome.</p>
                     </div>
                     <div class="row">
                         <h3 class="text-decaf border-bottom border-decaf border-2">Instructions</h3>
                         <p>Enter a word, or words, into the box and press the button, results will appear on screen.</p>
+                    </div>
+                    <div class='row'>
+                        <h3 class="text-decaf border-bottom border-decaf border-2">Sample Palindromes</h3>
+                        <div>
+                            <p>Decaf Faced</p>
+                            <p>Faced Decaf</p>
+                            <p>Taco cat</p>
+                            <p>A man, a plan, a canal--Panama!</p>
+                            <p>Are we not pure? “No, sir!” Panama’s moody Noriega brags. “It is garbage!” Irony dooms a
+                                man—a prisoner up to new era.</p>
+                        </div>
                     </div>
                 </div>
 
                 <div class="col border-start border-2 border-decaf p-2 pt-3">
                     <h5 class="text-decaf border-bottom border-2 border-decaf">Enter Your Word</h5>
                     <input type="text" class="form-control" id="inputWord" value='' placeholder='Input word here'>
-                    <button id="btnSubmit" type='submit' class='btn btn-primary btn-hover btn-decaf mt-2'>Check for
+                    <button id="btnSubmit" type='submit' class='btn btn-hover btn-decaf my-2'>Check for
                         Palindrome</button>
                     <p>You entered the word: <span id='reversedWord'></span></p>
-                    <div class='text-center border border-decaf'><span id='resultH'></span></div>
+                    <div class='text-center border border-decaf mt-5 visually-hidden' id="resultBox"><span id='resultH'><br><br><br></span></div>
                 </div>
 
             </div>

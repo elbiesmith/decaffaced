@@ -1,6 +1,7 @@
+let testWord = '';
 function getWord() {
     let word = document.getElementById("inputWord").value;
-    
+    testWord = word;
     word = word.replace(/[^a-zA-Z0-9]/g, "").toLowerCase();
     if (word.length < 2) {
         Swal.fire({
@@ -13,7 +14,7 @@ function getWord() {
 
     let revWord = flipWord(word);
 
-    displayResults(word, revWord);
+    displayResults(testWord, word, revWord);
 }
 
 function flipWord(word) {
@@ -24,16 +25,19 @@ function flipWord(word) {
     return newWord;
 }
 
-function displayResults(word, flipped) {
+function displayResults(testWord, word, flipped) {
     let result = document.getElementById('reversedWord');
     let resultH = document.getElementById('resultH');
+    let resultBox = document.getElementById('resultBox');
     result.innerHTML = '';
 
     result.innerHTML += `<u>${word}</u> and the word reversed is <u>${flipped}</u>`;
 
     if (word === flipped) {
-        resultH.innerHTML = `<h3>${word}</h3><h4 class="text-success">Palindrome!</h4>`;
+        resultH.innerHTML = `<h4>${testWord}</h4><h3 class="text-success">Palindrome!</h3>`;
+        resultBox.classList.remove('visually-hidden');
     } else {
-        resultH.innerHTML = `<h3>${word}</h3><h4 class="text-danger">Not a Palindrome</h4>`;
+        resultH.innerHTML = `<h4>${testWord}</h4><h3 class="text-danger">Not a Palindrome</h3>`;
+        resultBox.classList.remove('visually-hidden');
     }
 }
