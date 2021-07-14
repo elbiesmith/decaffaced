@@ -7,7 +7,8 @@ function getWord() {
         Swal.fire({
             icon: 'error',
             title: 'Oops...',
-            text: 'Please enter a word with at least 2 letters.'
+            text: 'Please enter a word with at least 2 letters.',
+            confirmButtonColor: '#e3815a'
         })
         return;
     }
