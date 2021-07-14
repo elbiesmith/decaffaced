@@ -64,3 +64,8 @@
    .bg-decaf {
        background-color: #e3815a;
    }
+
+   .sticky-decaf {
+       position: fixed;
+       bottom: 0;
+   }
