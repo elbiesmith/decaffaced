@@ -119,6 +119,11 @@
     <script src="/js/site.js"></script>
     <script>
         document.getElementById('btnSubmit').addEventListener('click', getWord);
+        document.getElementById("inputWord").addEventListener('keypress', function (keyPressed){
+            if (keyPressed.key === 'Enter'){
+                getWord();
+            }
+        })
     </script>
 
 </body>
